@@ -1,22 +1,20 @@
-import './ExpenseItem.css';
+import "./ExpenseDate.css";
+import ExpenseDate from "./ExpenseDate";
+import "./ExpenseItem.css";
+import Card from './Card'
+import ExpenseDetails from "./ExpenseDetails";
 
 function ExpenseItem(props) {
-  // const expenseDate=new Date(2022,12,4);
-  // const expenseTitle="Car Insurance";
-  // const expenseAmount=294.67;
-  // const LocationOfExpenditure = "USA"
   return (
-    <div className='expense-item'>
-      <div>{props.date.toISOString}</div>
-      <div className='expense-item__description'>
+    <Card className="expense-item">
+      <ExpenseDate date={props.date} />
+      {/* <ExpenseDetails amount={props.amount} title={props.title} /> */}
+      <div className="expense-item__description">
         <h2>{props.title}</h2>
-        <h2>{props.LocationOfExpenditure}</h2>
-        <div className='expense-item__price'>${props.amount}</div>
       </div>
-    </div>
-    
+      <div className="expense-item__price">${props.amount}</div>
+    </Card>
   );
 }
 
 export default ExpenseItem;
-
