@@ -5,6 +5,11 @@ import Card from './Card'
 import ExpenseDetails from "./ExpenseDetails";
 
 function ExpenseItem(props) {
+  function removeItem(){
+    console.log("Deleted")
+    // props.title.
+  }
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
@@ -13,6 +18,7 @@ function ExpenseItem(props) {
         <h2>{props.title}</h2>
       </div>
       <div className="expense-item__price">${props.amount}</div>
+      <button onClick={removeItem}>Delete Expense</button>
     </Card>
   );
 }
