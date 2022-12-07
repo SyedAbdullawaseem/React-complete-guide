@@ -3,6 +3,7 @@ import "./App.css";
 
 import ExpenseItem from "./components/ExpenseItem";
 import { isContentEditable } from "@testing-library/user-event/dist/utils";
+import NewExpense from "./components/NewExpense";
 
 function App() {
   const expenses = [
@@ -31,6 +32,7 @@ function App() {
   ];
   return (
     <div>
+      <NewExpense/>
       <h1>Expense Items</h1>
       <ExpenseItem
         title={expenses[0].title}
@@ -58,6 +60,12 @@ function App() {
       ></ExpenseItem>
     </div>
   );
+  // return(
+  //   <div>
+  //     <NewExpense/>
+
+  //   </div>
+  // )
 }
 
 export default App;
